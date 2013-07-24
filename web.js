@@ -2,6 +2,7 @@ var express = require('express');
 var fs  = require('fs');
 
 var app = express.createServer(express.logger());
+app.use(express.static(__dirname + '/bootstrap'));
 
 app.get('/', function(request, response) {
     var content = fs.readFileSync('./index.html');
